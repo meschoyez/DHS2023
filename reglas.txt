@@ -1,0 +1,22 @@
+while (t > 0) {        WHILE PA opal PC
+    t--;                  instruccion
+}
+
+for (x = 0; a < 10; y++) {   FOR PA asig PYC opal PYC asig PC
+    x = y + 1;                  instruccion
+    a = 2 * x;
+}
+
+int f (int x);               tdato ID PA args PC PYC
+                             args : tdato ID lista_args
+                                  |
+                             lista_args : COMA TDATO ID lista_args
+                                        |
+                             tdato : INT | DOUBLE
+
+int f (int x) {              tdato ID PA args PC bloque
+    int y;
+    return 2 * x *;
+}
+
+f(x);                        ID PA expresion PC PYC

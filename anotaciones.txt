@@ -39,3 +39,22 @@ Hacer las expresiones regulares para capturar:
  - Fechas de meses pares (mes 30 dias y año 4 digitos)
  - Horas entre las 11:45 y las 14:15
  - Numeros hexadecimales (C)
+
+
+---------
+
+Tabla de Símbolos
+
+Recolectar información de indentificadores:
+  + Se los incorpora declara
+  + Se detecta inicialización
+  + Se detecta acceso (uso)
+  + Se indica tipo de dato
+  + Se indica el contexto al que pertenece
+  + Si es función, se indica cantidad y tipo de argumentos
+
+La tabla es una colección que permite:
+  + Buscar un indentificador (local o globalmente)
+  + Agregar un indentificador
+  + Agregar un contexto
+  + Borrar un contexto

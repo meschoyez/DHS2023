@@ -10,6 +10,11 @@ LLA : '{' ;
 LLC : '}' ;
 PYC : ';' ;
 COMA : ',' ;
+MAS : '+' ;
+MENOS : '-' ;
+MULT : '*' ;
+DIV : '/' ;
+MOD : '%' ;
 
 NUMERO : DIGITO+ ;
 
@@ -47,7 +52,7 @@ instrucciones : instruccion instrucciones
               ;
 
 instruccion : declaracion
-            // | asignacion
+            | asignacion PYC
             // | retornar
             // | if_stmt
             // | for_stmt
@@ -69,4 +74,31 @@ lista_var : COMA ID definicion lista_var
 
 while_stmt : WHILE PA opal PC instruccion ;
 
-opal : ID ;
+asignacion : ID EQ opal ;
+
+opal : expresion ;
+
+expresion : termino exp ;
+
+exp : MAS   termino exp
+    | MENOS termino exp
+    |
+    ;
+
+termino : factor term ;
+
+term : MULT factor term
+     | DIV  factor term
+     | MOD  factor term
+     |
+     ;
+
+factor : NUMERO
+       | ID
+       | MENOS NUMERO
+       | MENOS ID
+       | funcion
+       | PA expresion PC
+       ;
+
+funcion : ID PA ID PC ;

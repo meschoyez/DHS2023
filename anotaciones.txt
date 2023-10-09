@@ -46,10 +46,10 @@ Hacer las expresiones regulares para capturar:
 Tabla de Símbolos
 
 Recolectar información de indentificadores:
-  + Se los incorpora declara
+  + Se los incorpora cuando se los declara
+  + Se indica tipo de dato
   + Se detecta inicialización
   + Se detecta acceso (uso)
-  + Se indica tipo de dato
   + Se indica el contexto al que pertenece
   + Si es función, se indica cantidad y tipo de argumentos
 

@@ -1,10 +1,11 @@
 int x ;
-double c ;
+double c , p, q;
 
 {
     int x;
     {
         int z;
+        int w;
         {
             int x;
             z = x;
@@ -13,12 +14,6 @@ double c ;
 }
 
 
-x = - 10 ;
-y = -x + 5 / 3 + 1;
-
-z = x + y ;
-
-r = f(x) ;
 
 int y = 0;
 
@@ -33,7 +28,3 @@ while (x < 10) {
 
 while (x < 10)
     a = b + c;
-
-i++  -> i = i + 1
-++i  -> i = i + 1
-

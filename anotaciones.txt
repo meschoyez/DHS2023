@@ -58,3 +58,85 @@ La tabla es una colección que permite:
   + Agregar un indentificador
   + Agregar un contexto
   + Borrar un contexto
+
+-----------
+
+Código Intermedio
+
+Es una representación del software independiente del:
+ * lenguaje original
+ * independiente del hardware
+
+Código de Tres Direcciones
+
+Operación base -->   a = b op c
+(ADD ax, bx, cx)
+
+a = cte
+a = b
+a = b op cte
+label l1
+jmp l1
+if a op b jmp l1
+push a
+pop a
+
+Para generar código intermedio necesito:
+ * Generador de variables temporales
+ * Generador de etiquetas
+
+x = 2 * y + z / 4;
+
+t0 = 2 * y
+t1 = z / 4
+t2 = t0 + t1
+x = t2
+
+--
+if (z < 5)
+  z = 2 * x;
+else
+  z = x / 2;
+
+ifn z < 5 jmp l0
+  z = 2 * x
+  jmp l1
+label l0
+  z = x / 2
+label l1
+
+--
+for (i = 0; i < 10; i = i + 1)
+  x = x + i
+
+i = 0
+label l0
+ifn i < 10 jmp l1
+x = x + i
+i = i + 1
+jmp l0
+label l1
+
+--
+int f (int a, int b) {
+  return a + b;
+}
+
+...
+x = f(y, z);
+...
+
+label l0
+pop a
+pop b
+pop l
+t0 = a + b
+push t0
+jmp l
+...
+push y
+push z
+push l1
+jump l0
+label l1
+pop x
